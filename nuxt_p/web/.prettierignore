@@ -1,0 +1,12 @@
+# node_modulesは自動生成や外部パッケージのコードなので除外
+node_modules
+
+# Nuxt の自動生成ディレクトリは編集不要なので除外
+app/.nuxt
+app/.output
+
+# Prisma のマイグレーションファイル（SQLファイル）はフォーマットの対象外にする（必要に応じて）
+app/prisma/migrations
+
+# もし、db以下のSQLファイルもPrettierで整形しない場合は以下も除外
+db
