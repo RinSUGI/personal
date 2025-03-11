@@ -1,14 +1,15 @@
 <script setup lang="ts">
-const a = '';
-const b: string = '';
-const c: object = {
-  type: 'a',
-  i: 'jjj',
+import { ref } from 'vue';
+
+const label = ref<string>('ボタンだよ');
+const handleMessage = () => {
+  window.alert('button pushed');
 };
 </script>
+
 <template>
   <div>
-    <!-- hoge -->
+    <a-button @click="handleMessage"> {{ label }} </a-button>
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
   </div>

@@ -10,5 +10,8 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true, // ビルド時・開発時に型チェック
   },
-  modules: ['@nuxt/eslint']
-})
+  modules: ['@nuxt/eslint', '@ant-design-vue/nuxt'],
+  antd: {
+    // Options
+  },
+});
