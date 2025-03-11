@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const label = ref<string>('ボタンだよ');
+const label = ref<string>('ボタンだaaaよ');
 const handleMessage = () => {
   window.alert('button pushed');
 };
