@@ -1,12 +1,11 @@
 <script setup lang="ts">
-const a: string = 'aiue';
-const b: string = 'aiueo';
+const a = '';
+const b: string = '';
 const c: object = {
-  aiue: 'a',
+  type: 'a',
   i: 'jjj',
 };
 </script>
-
 <template>
   <div>
     <!-- hoge -->
