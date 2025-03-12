@@ -10,8 +10,8 @@ const handleMessage = () => {
 <template>
   <div>
     <a-button @click="handleMessage"> {{ label }} </a-button>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <!-- pages配下の各画面を表示 -->
+    <NuxtPage />
   </div>
 </template>
 

@@ -39,6 +39,7 @@ export default withNuxt()
       'vue/html-comment-content-spacing': ['warn', 'always'],
       'vue/max-lines-per-block': ['warn', { script: 150, template: 100 }],
       'vue/max-template-depth': ['warn', { maxDepth: 3 }],
+      'vue/multi-word-component-names': ['off'], // index.vueなどがエラーとなり開発効率が落ちるためオフ
       'vue/no-bare-strings-in-template': ['warn'],
       'vue/no-ref-object-reactivity-loss': ['error'],
       'vue/no-lone-template': ['warn'],
