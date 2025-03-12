@@ -14,3 +14,5 @@ const handleMessage = () => {
     <NuxtWelcome />
   </div>
 </template>
+
+<style lang="scss" scoped></style>
