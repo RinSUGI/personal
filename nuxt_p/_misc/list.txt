@@ -1,10 +1,7 @@
-astr-cloud/                         # プロジェクトのルートディレクトリ
+nuxt_p/                             # プロジェクトのルートディレクトリ
 ├── .vscode/                        # エディターの設定ファイル（Pritterを適用するのに使用）
 │   └── settings.json
-├── db/                             # dbサービス関連のファイル
-│   └── sql/                        # SQLファイル
-│       └── init/                   # dbサービス初期化SQL用のファイル
-│           └── init.sql
+├── db/                             # dbサービス関連のファイル（今回は未使用）
 ├── web/                            # webサービス関連のファイル
 │   ├── .nuxt/                      # Nuxt自動生成物（グローバルコンポーネントなどのコンフィグ）
 │   ├── .output/                    # Nuxt自動生成物（ビルド後の静的生成物など）
@@ -19,16 +16,8 @@ astr-cloud/                         # プロジェクトのルートディレク
 │   ├── layouts/                    # 共通レイアウト（ヘッダー、フッター、サイドバーなど）
 │   ├── node_modules/               # webサービスの依存関係
 │   ├── pages/                      # ルーティング先の各機能画面のvueファイル
-│   │   ├── admin/                  # バックオフィスユーザー向け画面関連
-│   │   │   ├── auth/               # 認証関連
-│   │   │   │   ├── login/          # ログイン画面
-│   │   │   │   │   └── index.vue
-│   │   │   │   ├── password-init/  # パスワード初期設定画面
-│   │   │   │   └── password-reset/ # パスワードリセットメール送信画面
-│   │   │   ├── institution/        # 医療機関管理画面関連
-│   │   │   ├── settings/           # 全体設定関連
-│   │   │   └── user/               # ユーザー設定関連
-│   │   ├── medical/                # 医療機関ユーザー向け画面関連
+│   │   ├── hoge/                   # hoge
+│   │   ├── fuga/                   # fuga
 │   │   ├── [...notFound].vue
 │   │   └── index.vue
 │   ├── prisma/                     # Prisma ORM のDBスキーマ定義やマイグレーションなど
@@ -60,12 +49,12 @@ astr-cloud/                         # プロジェクトのルートディレク
 │   ├── .prettierignore
 │   ├── .prettierrc
 │   ├── app.vue
-│   ├── Dockerfile
+│   ├── Dockerfile # 今回は入れていない
 │   ├── eslint.config.mjs
 │   ├── nuxt.config.ts
 │   ├── package-lock.json
 │   ├── package.json
 │   └── tsconfig.json
 ├── .gitignore
-├── docker-compose.yml
+├── docker-compose.yml  # 今回は入れていない
 └── README.md
