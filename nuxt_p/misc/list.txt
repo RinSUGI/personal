@@ -1,0 +1,71 @@
+astr-cloud/                         # プロジェクトのルートディレクトリ
+├── .vscode/                        # エディターの設定ファイル（Pritterを適用するのに使用）
+│   └── settings.json
+├── db/                             # dbサービス関連のファイル
+│   └── sql/                        # SQLファイル
+│       └── init/                   # dbサービス初期化SQL用のファイル
+│           └── init.sql
+├── web/                            # webサービス関連のファイル
+│   ├── .nuxt/                      # Nuxt自動生成物（グローバルコンポーネントなどのコンフィグ）
+│   ├── .output/                    # Nuxt自動生成物（ビルド後の静的生成物など）
+│   ├── app/                        # アプリケーション固有のテンプレートやリソース
+│   │   └── spa-loading-template.html
+│   ├── assets/                     # 全体で使用するstyleなど
+│   │   └── styles/                 # グローバルstyle
+│   │       └── global.css
+│   ├── components/                 # 共通コンポーネント
+│   ├── composables/                # UI固有のロジックや、状態管理、API 通信、サイドエフェクトの処理などをコンポーネント間で共通化する
+│   ├── constants/                  # サーバー・クライアントどちらでも共通して利用する定数リソース
+│   ├── layouts/                    # 共通レイアウト（ヘッダー、フッター、サイドバーなど）
+│   ├── node_modules/               # webサービスの依存関係
+│   ├── pages/                      # ルーティング先の各機能画面のvueファイル
+│   │   ├── admin/                  # バックオフィスユーザー向け画面関連
+│   │   │   ├── auth/               # 認証関連
+│   │   │   │   ├── login/          # ログイン画面
+│   │   │   │   │   └── index.vue
+│   │   │   │   ├── password-init/  # パスワード初期設定画面
+│   │   │   │   └── password-reset/ # パスワードリセットメール送信画面
+│   │   │   ├── institution/        # 医療機関管理画面関連
+│   │   │   ├── settings/           # 全体設定関連
+│   │   │   └── user/               # ユーザー設定関連
+│   │   ├── medical/                # 医療機関ユーザー向け画面関連
+│   │   ├── [...notFound].vue
+│   │   └── index.vue
+│   ├── prisma/                     # Prisma ORM のDBスキーマ定義やマイグレーションなど
+│   │   ├── migrations/             # マイグレーションファイル
+│   │   │   ├── 20250311025512_init/
+│   │   │   │   └── migration.sql
+│   │   │   └── migration_lock.toml
+│   │   └── schema.prisma
+│   ├── public/                     #　公開用の静的ファイル
+│   │   ├── favicon.ico
+│   │   └── robots.txt
+│   ├── server/                     # ServerSide関連ファイル
+│   │   ├── _docs/                  # ServerSideのドキュメント
+│   │   │   └── openapi_back_office_user.yml
+│   │   ├── api/                    # APIエンドポイント（必要なパラメータのパースやエラーハンドリングを行った上でControllerを呼び出すだけの薄いラッパー）
+│   │   │   └── sample/             # サンプル用（ゆくゆくは削除予定）
+│   │   │       └── users.ts
+│   │   ├── config/                 # 環境設定やDB接続、外部サービスとの連携設定など（PrismaClient初期化など）
+│   │   ├── controllers/            # apiのラッパーから呼ばれ、リクエストの内容に応じた入力検証や変換を行い、ビジネスロジックを担当するservicesの機能を呼ぶ
+│   │   ├── dtos/                   # データ転送オブジェクト（DTO：リクエストの形式やレスポンスの形式定義。コントローラやサービス内で、リクエストデータの検証や変換のために利用）
+│   │   ├── middlewares/            # HTTP リクエストの前後処理（例: 認証、ログ、エラーハンドリング、リクエスト検証など）を行う関数を配置
+│   │   ├── models/                 # アプリケーションの内部ロジック用のドメインモデルやビジネスロジックに沿ったエンティティモデル定義
+│   │   ├── repositories/           # データベースアクセスや外部APIとの通信など、データ取得・永続化の処理
+│   │   ├── services/               # ユースケース／アプリケーションのビジネスロジックを実装する層
+│   │   └── tsconfig.json
+│   ├── types/                      # サーバー・クライアント共通の純粋な型定義やインターフェース（e.g. シンプルな型やAPIレスポンスの形式など）
+│   ├── utils/                      # サーバー・クライアント共通の汎用処理
+│   ├── .env
+│   ├── .prettierignore
+│   ├── .prettierrc
+│   ├── app.vue
+│   ├── Dockerfile
+│   ├── eslint.config.mjs
+│   ├── nuxt.config.ts
+│   ├── package-lock.json
+│   ├── package.json
+│   └── tsconfig.json
+├── .gitignore
+├── docker-compose.yml
+└── README.md
