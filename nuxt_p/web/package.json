@@ -12,7 +12,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@ant-design-vue/nuxt": "^1.4.6",
     "@nuxt/eslint": "^1.2.0",
+    "ant-design-vue": "^4.2.6",
     "eslint": "^9.22.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^3.15.4",
