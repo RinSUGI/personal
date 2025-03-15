@@ -1,0 +1,39 @@
+// 変数
+$link-color: #1890ff;
+$base-font-size: 14px;
+$heading-font-size: 16px;
+$font-family-base: 'Roboto', sans-serif;
+
+// ブラウザの種類による差異の正規化 + Google Fonts のインポート
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 基本ルール */
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  margin: 0;
+  font-size: $base-font-size;
+  line-height: 1.5;
+  font-family: $font-family-base;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: $heading-font-size;
+  margin: 0;
+}
+
+// リンク文字列は青色で、訪問済みでも色が変わらないようにする
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
