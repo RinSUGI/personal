@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .home {
   text-align: center;
   margin-top: 50px;

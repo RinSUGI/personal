@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .error-page {
   text-align: center;
   margin-top: 50px;
