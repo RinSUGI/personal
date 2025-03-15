@@ -58,3 +58,27 @@ nuxt_p/                             # プロジェクトのルートディレク
 ├── .gitignore
 ├── docker-compose.yml  # 今回は入れていない
 └── README.md
+
+
+    │   ├── components/                 # 汎用コンポーネント群
+    │   │   ├── SingleCardLogin.vue     # ログイン・初期パスワード設定用のカードコンポーネント
+    │   │   ├── MenuLayoutForGeneral.vue  # ログイン後の共通ヘッダー・レイアウト
+    │   │   ├── ContentBackground.vue   # 各画面の背景（ヘッダー下の領域）
+    │   │   ├── ContentCard.vue         # 各画面のコンテンツ表示用カードコンポーネント
+    │   │   ├── ProgressBar.vue         # 処理状況を示すプログレスバー
+    │   │   ├── MenuSelectBox.vue       # メニュー用セレクトボックス
+    │   │   ├── LinkText.vue            # リンク表示用テキストコンポーネント
+    │   │   ├── CreditText.vue          # クレジット表記用テキスト
+    │   │   ├── Button.vue              # 用途に応じたスタイル変更可能なボタン
+    │   │   ├── Toast.vue               # 処理成功／エラー時のトースト表示
+    │   │   ├── LabelText.vue           # ラベル用テキストコンポーネント
+    │   │   ├── LabeledInputBox.vue     # ラベル付き入力ボックス（文字入力）
+    │   │   ├── InputBox.vue            # 単体の入力ボックス
+    │   │   ├── LabeledSelectBox.vue    # ラベル付きセレクトボックス
+    │   │   ├── SelectBox.vue           # 単体のセレクトボックス
+    │   │   ├── LabeledCheckBox.vue     # ラベル付きチェックボックス
+    │   │   ├── CheckBox.vue            # 単体のチェックボックス
+    │   │   ├── ConfirmationDialog.vue  # 確認ダイアログ
+    │   │   ├── TableComponent.vue      # 一覧表示用のテーブル部品
+    │   │   ├── ImageDisplay.vue        # SVG/png 画像表示用コンポーネント
+    │   │   └── IconDisplay.vue         # アイコン表示用コンポーネント
