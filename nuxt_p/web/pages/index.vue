@@ -1,4 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from 'vue';
+
+const sample = async (): Promise<void> => {
+  try {
+    const res = await fetch('/api/sample');
+    console.log(await res.json());
+  } catch (error: any) {
+    console.error(error);
+  }
+};
+
+onMounted(async () => {
+  await sample();
+});
+</script>
 
 <template>
   <div class="home">

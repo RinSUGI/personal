@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+/* パスワードセットタイプ定義 */
+enum PasswordSetType {
+  INIT   // 初期パスワード設定
+  RESET  // パスワードリセット
+}
+
+//
+// hoge側
+//
+/* hoge */
+model HogeUser {
+  id                          String    @id @default(uuid())      // uuid
+  loginId                     String    @unique @db.VarChar(255)  // ログインID
+  name                        String    @db.VarChar(255)          // ユーザー名
+  email                       String    @unique @db.VarChar(255)  // メールアドレス（パスワードリセットメール送信先としても使用）
+  passwordHash                String?   @db.VarChar(255)          // パスワード（ハッシュ値）
+  createdAt                   DateTime  @default(now())           // 作成日時
+  updatedAt                   DateTime  @updatedAt                // 更新日時
+  /* リレーション */
+  refreshToken                HogeRefreshToken?                  // リフレッシュトークン（hoge）
+  passwordResetToken          HogePasswordResetToken?            // パスワードリセットトークン（hoge）
+}
+
+/* リフレッシュトークンテーブル */
+model HogeRefreshToken {
+  id                String    @id @default(uuid())      // uuid
+  hogeUserId        String    @unique @db.VarChar(255)  // HogeユーザーID（外部キー）
+  refreshTokenHash  String    @db.VarChar(255)          // リフレッシュトークン（ランダム文字列からハッシュ化する）
+  expiresAt         DateTime                            // リフレッシュトークン有効期限
+  createdAt         DateTime  @default(now())           // 作成日時
+  updatedAt         DateTime  @updatedAt                // 更新日時
+  /* リレーション */
+  hogeUser         HogeUser @relation(fields: [hogeUserId], references: [id], onDelete: Cascade) // hogeUser
+}
+
+/* パスワードリセットトークンテーブル */
+model HogePasswordResetToken {
+  id                      String          @id @default(uuid())      // uuid
+  hogeUserId              String          @unique @db.VarChar(255)  // ユーザーID
+  setType                 PasswordSetType @default(INIT)            // パスワードセット経路
+  passwordResetTokenHash  String          @db.VarChar(255)          // パスワードリセットトークン（ランダム文字列からハッシュ化）
+  tokenExpiresAt          DateTime                                  // パスワードリセットトークン有効期限
+  createdAt               DateTime        @default(now())           // 作成日時
+  /* リレーション */
+  hogeUser               HogeUser @relation(fields: [hogeUserId], references: [id], onDelete: Cascade) // hoge
+}
