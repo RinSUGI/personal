@@ -3,7 +3,16 @@ import { onMounted } from 'vue';
 
 const sample = async (): Promise<void> => {
   try {
-    const res = await fetch('/api/sample');
+    const res = await fetch('/api/hoge-user', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      // 必要なデータを JSON 化して送信する（例として固定値を設定）
+      body: JSON.stringify({
+        loginId: 'test001',
+        name: 'テスト001',
+        email: 'new@example.com',
+      }),
+    });
     console.log(await res.json());
   } catch (error: any) {
     console.error(error);
