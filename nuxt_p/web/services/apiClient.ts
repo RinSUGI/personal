@@ -1,3 +1,4 @@
+import { useRuntimeConfig } from '#imports';
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosResponse } from 'axios';
 
 // 環境変数取得

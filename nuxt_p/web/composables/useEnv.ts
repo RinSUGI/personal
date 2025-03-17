@@ -1,3 +1,5 @@
+import { useRuntimeConfig } from '#imports';
+
 /**
  * 環境種別を取得する処理
  *
