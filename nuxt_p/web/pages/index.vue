@@ -13,21 +13,9 @@ const sample = async (): Promise<void> => {
       name: 'テスト001',
       email: 'new@example.com',
     };
-    const ress: HogeUserResponse = await postRequest(endpoint, params);
-    console.log(ress.data);
-    hogeUserRef.value = ress;
-
-    const res = await fetch('/api/hoge-user', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      // 必要なデータを JSON 化して送信する（例として固定値を設定）
-      body: JSON.stringify({
-        loginId: 'test001',
-        name: 'テスト001',
-        email: 'new@example.com',
-      }),
-    });
-    console.log(await res.json());
+    const res: HogeUserResponse = await postRequest(endpoint, params);
+    console.log(res.data);
+    hogeUserRef.value = res;
   } catch (error: unknown) {
     console.error(error);
   }

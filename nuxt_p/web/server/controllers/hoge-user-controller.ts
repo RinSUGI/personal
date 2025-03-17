@@ -22,16 +22,8 @@ export const handleUpsertHogeUser = async (event: H3Event): Promise<ApiResponse>
     const { body } = await getApiRequestParams(event);
     console.log('request body:', body);
 
-    // TODO 一旦固定値
-    const input: CreateHogeUserDto = {
-      loginId: 'test001',
-      name: 'テスト001',
-      email: 'new@example.com',
-    };
-
     // リクエスト内容を検証
-    const validatedInput: CreateHogeUserDto = validateDto(createHogeUserSchema, input);
-    // const validatedInput: CreateHogeUserDto = validateDto(createHogeUserSchema, body);
+    const validatedInput: CreateHogeUserDto = validateDto(createHogeUserSchema, body);
 
     // Hogeユーザー登録・更新処理結果取得
     const result: UpsertHogeUserResult = await upsertHogeUser(validatedInput);
